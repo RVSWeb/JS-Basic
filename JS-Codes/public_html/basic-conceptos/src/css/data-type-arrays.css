@@ -1,0 +1,24 @@
+/* 
+    Created on : 25 abr. 2020, 21:02:13
+    Author     : Roboto
+*/
+
+#principal{
+  width: 500px;
+  height: auto;
+}
+
+#section__title{
+  font-family: Roboto , sans-serif;
+  text-align: center;
+}
+
+#main__section{
+  padding: 10px;
+  font-family: inherit;
+  font-size: 20px;
+  text-transform: capitalize;
+  font-weight: 500;
+  background: #ccc;
+  border-radius: 6px;
+}
