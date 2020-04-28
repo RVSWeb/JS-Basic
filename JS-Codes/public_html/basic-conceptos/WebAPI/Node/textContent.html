@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <!--Created on 28 abr. 2020, 22:41:08-->
+    <title>textContent</title>
+    <meta charset="UTF-8">
+    <meta name="author" content="Raul Vela Salas">
+    <meta name="description" content="...">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+    <link rel="shortcut icon" href="https://goo.gl/cais23">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.css">
+    <style>
+
+    </style>
+  </head>
+  <body>
+
+    <main>
+      <section>
+        <h1>textContent</h1>
+        <p>Interfaz Node representa el contenido de texto de un nodo y sus descendientes</p>
+        <ul>
+          <li><b>textContent</b>lee el contenido de todos los elementos , incluyendo &lt;script&gt; y &lt;style&gt; </li>
+          <li><b>innerText</b> tiene en cuenta el estilo CSS , no retornará texto de elementos escondidos, textContent si lo hace. </li>
+          <li><b>innerText</b> interpreta el estilo CSS, escribirlo disparará un <b>reflow</b>
+            <ul>
+              <li><b>reflow</b> : Calcula el diseño de la página y vuelve a pintarla.<br> 
+                Un <b>reflow</b> en un elemento vuelve a calcular las 
+                dimensiones y la posición del elemento, y también 
+                desencadena más reflow en los elementos secundarios, ancestros 
+                y elementos de ese elemento que aparecen después en el DOM. 
+                Luego vuelve a repintar en la pantalla los cambios. 
+                El reflujo es muy costoso y desafortunadamente 
+                se puede disparar fácilmente.
+              </li>
+            </ul>
+            , mientras que textContent no lo hará.</li>
+        </ul>
+
+        <p>Ejemplo</p>
+        <p>Intercambiar textos</p>
+        <p>El contenido de la 1º frase esta en el 2º</p>
+        <p>El contenido de la 2º frase esta en el 1º</p>
+        <div id="divA"> This is <span>some</span> text! </div>
+        <div id="divB"></div>
+
+      </section>
+    </main>
+    <script>
+//                  obj  . function             . property
+      let text = document.getElementById('divA').textContent;
+//       obj  .  function            . property   =  object
+      document.getElementById('divB').textContent = text;
+//       obj  .  function            . property   =  literal
+      document.getElementById('divA').textContent = 'This text is diferent';
+
+    </script>
+  </body>
+</html>
