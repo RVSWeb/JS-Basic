@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <!--Created on 28 abr. 2020, 19:32:39-->
+    <title>Array forEach</title>
+    <meta charset="UTF-8">
+    <meta name="author" content="Raul Vela Salas">
+    <meta name="description" content="...">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+    <link rel="shortcut icon" href="https://goo.gl/cais23">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.css">
+  </head>
+  <body>
+    <script>
+      /**
+       * Imprime una línea por 
+       * cada elemento en un array
+       * 
+       * @param {object} valoresArrays
+       * @param {object} index
+       * @param {object} array
+       * @returns {undefined}
+       */
+      function logArrayElements(valoresArrays, index, array) {
+        console.log("a[" + index + "] = " + valoresArrays + " array " + array);
+      }
+
+// Nótese que se evita el 2° índice ya que no hay ningún elemento en esa posición del array
+      [2, 5, , 9].forEach(logArrayElements);
+
+    </script>
+  </body>
+</html>

@@ -5,7 +5,7 @@
     <title>textContent</title>
     <meta charset="UTF-8">
     <meta name="author" content="Raul Vela Salas">
-    <meta name="description" content="...">
+    <meta name="description" content="textContent">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta http-equiv="content-type" content="text/html; charset=UTF-8">
@@ -14,6 +14,30 @@
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.css">
     <style>
 
+      #divA , #divB{
+        width: 50%;
+        height: auto;
+        padding: 10px;
+        margin: 10px;
+        border: 1px solid #f00;
+      }
+
+      section{
+        width: 40%;
+        height: auto;
+        padding: 10px;
+        font-family: Roboto , sans-serif;
+        background: #cff;
+      }
+
+      #divA{
+        background: #ccffcc;
+      }
+
+      #divB{
+        background: #ffcccc;
+      }
+
     </style>
   </head>
   <body>
@@ -21,10 +45,10 @@
     <main>
       <section>
         <h1>textContent</h1>
-        <p>Interfaz Node representa el contenido de texto de un nodo y sus descendientes</p>
+        <p>Interfaz <b>Node</b> representa el contenido de texto de un nodo y sus descendientes</p>
         <ul>
-          <li><b>textContent</b>lee el contenido de todos los elementos , incluyendo &lt;script&gt; y &lt;style&gt; </li>
-          <li><b>innerText</b> tiene en cuenta el estilo CSS , no retornará texto de elementos escondidos, textContent si lo hace. </li>
+          <li><b>textContent</b> lee el contenido de todos los elementos , incluyendo &lt;script&gt; y &lt;style&gt; </li>
+          <li><b>innerText</b> tiene en cuenta el estilo CSS y la etiqueta script, no retornará texto de elementos escondidos, textContent si lo hace. </li>
           <li><b>innerText</b> interpreta el estilo CSS, escribirlo disparará un <b>reflow</b>
             <ul>
               <li><b>reflow</b> : Calcula el diseño de la página y vuelve a pintarla.<br> 
@@ -46,17 +70,20 @@
         <p>El contenido de la 2º frase esta en el 1º</p>
         <div id="divA"> This is <span>some</span> text! </div>
         <div id="divB"></div>
-
       </section>
     </main>
+
     <script>
-//                  obj  . function             . property
+//      Intercambiar el texto entre elementos
+//      Obtenemos el texto dentro del div 'divA'
+//                  obj  . function             . property = almacena el texto del elemento div
       let text = document.getElementById('divA').textContent;
+//      Inyectamos el texto dentro del div 'divB'
 //       obj  .  function            . property   =  object
       document.getElementById('divB').textContent = text;
+//      Reescribirmos el texto dentro del div 'divA'
 //       obj  .  function            . property   =  literal
-      document.getElementById('divA').textContent = 'This text is diferent';
-
+      document.getElementById('divA').textContent = 'Este texto es diferente al que tenia al principio';
     </script>
   </body>
 </html>

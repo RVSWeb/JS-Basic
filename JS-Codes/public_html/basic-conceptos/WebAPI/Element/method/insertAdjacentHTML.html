@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <!--Created on 29 abr. 2020, 12:43:57-->
+    <title>insertAdjacentHTML</title>
+    <meta charset="UTF-8">
+    <meta name="author" content="Raul Vela Salas">
+    <meta name="description" content="insertAdjacentHTML">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+    <link rel="shortcut icon" href="https://goo.gl/cais23">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.css">
+    <style>
+
+      main{
+        padding: 10px;
+        background: dodgerblue;
+      }
+
+      section{
+        padding: 10px;
+        background: gold;
+      }
+
+      #two{
+        width: fit-content;
+        height: auto;
+        padding: 10px;
+        background: tomato;
+        font-weight: bold;
+        font-family: Roboto , sans-serif;
+      }
+
+    </style>
+  </head>
+  <body>
+
+    <main>
+
+      <section>
+        <pre>
+        beforebegin 
+        &lt;p&gt;
+          afterbegin 
+          TEXTO
+          beforeend 
+        &lt;/p&gt;
+        afterend 
+        </pre>
+
+      </section>
+      <section>
+        <h1>insertAdjacentHTML</h1>
+        <div id="div1">Obtiene el contenido de un elemento o lo establece antes o despues dependiendo de la configuracion de su metodo</div>
+      </section>
+    </main>
+
+
+    <script>
+
+      var d1 = document.getElementById('div1');
+      d1.insertAdjacentHTML('afterend', '<div id="two">2º parrafo insertado mediante el metodo insertAdjacentHTML</div>');
+
+    </script>
+  </body>
+</html>

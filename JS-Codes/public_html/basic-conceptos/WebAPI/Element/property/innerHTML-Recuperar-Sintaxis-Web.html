@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html lang="es">
   <head>
-    <!--Created on 28 abr. 2020, 19:32:39-->
-    <title>Array forEach</title>
+    <!--Created on 29 abr. 2020, 11:40:21-->
+    <!-- https://developer.mozilla.org/es/docs/Web/API/Element/innerHTML -->
+    <title>innerHTML</title>
     <meta charset="UTF-8">
     <meta name="author" content="Raul Vela Salas">
     <meta name="description" content="...">
@@ -12,9 +13,12 @@
     <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
     <link rel="shortcut icon" href="https://goo.gl/cais23">
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.css">
+    <style>
+
+ 
+    </style>
   </head>
   <body>
-
 
     <footer style="
             width: 100%;
@@ -42,10 +46,8 @@
     </footer>
     <script>
 
+      document.documentElement.innerHTML = "<pre>" + document.documentElement.innerHTML.replace(/</g, "&lt;") + "</pre>";
 
-      const array1 = ['a', 'b', 'c'];
-// Ejecuta la funcion callback una vez por cada elemento presente en el array
-      array1.forEach(element => console.log(element));
 
     </script>
   </body>

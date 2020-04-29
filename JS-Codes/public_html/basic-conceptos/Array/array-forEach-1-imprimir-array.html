@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <!--Created on 28 abr. 2020, 19:32:39-->
+    <title>Array forEach</title>
+    <meta charset="UTF-8">
+    <meta name="author" content="Raul Vela Salas">
+    <meta name="description" content="...">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+    <link rel="shortcut icon" href="https://goo.gl/cais23">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.css">
+    <style>
+
+      #p1,#p2,#p3,#p4,#p5,#p6,#p7 {
+        width: fit-content;
+        height: auto;
+        padding: 10px;
+        margin: 10px;
+        text-align: center;
+        font-family: Roboto , sans-serif;
+        font-size: 2em;
+        background: #ff99ff;
+      }
+
+    </style>
+  </head>
+  <body>
+
+    <p id="p1"></p>
+    <p id="p2"></p>
+    <p id="p3"></p>
+    <p id="p4"></p>
+    <p id="p5"></p>
+    <p id="p6"></p>
+    <p id="p7"></p>
+
+    <script>
+// Metodo forEach() ejecuta la funcion indicada "una vez por cada elemento" del array 'callback'
+      const array1 = ['a', 'b', 'c'];
+// Ejecuta la funcion callback una vez por cada elemento presente en el array
+// "element" es cada "posicion" del array
+      array1.forEach(element => console.log(element));
+
+      const numeros = [1, 2, 3, 4, 5, 6, 7];
+//      
+      numeros.forEach(indice => document.getElementById('p' + indice).textContent = indice);
+
+    </script>
+  </body>
+</html>

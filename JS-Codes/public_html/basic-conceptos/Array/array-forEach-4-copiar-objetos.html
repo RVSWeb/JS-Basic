@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <!--Created on 29 abr. 2020, 20:01:57-->
+    <title>array-forEach-4-copiar-objetos</title>
+    <meta charset="UTF-8">
+    <meta name="author" content="Raul Vela Salas">
+    <meta name="description" content="...">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+    <link rel="shortcut icon" href="https://goo.gl/cais23">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.css">
+    <style>
+
+      #p1 , #p2 , h1{
+        width: fit-content;
+        height: auto;
+        padding: 10px;
+        margin: 10px;
+        background: #ffcccc;
+        border-radius: 7px;
+      }
+    </style>
+  </head>
+  <body>
+
+    <h1>Objetos copiados</h1>
+    <p id="p1"></p>
+    <p id="p2"></p>
+
+    <script>
+      /**
+       * Copia un objeto que le pasamos por parametro
+       * @param {object} miObj copia un objeto pasado por parametro
+       */
+      function copy(miObj) {
+// Copia el objeto
+        var copy = Object.create(Object.getPrototypeOf(miObj));
+// Copia el nombre
+        var propNames = Object.getOwnPropertyNames(miObj);
+// Recorremos el objeto de principio a fin 
+        propNames.forEach(function (name) {
+// Creamos una variable que almacene el 'objeto' y el 'name'
+          var descripcion = Object.getOwnPropertyDescriptor(miObj, name);
+// Invocamos metodo static 
+          Object.defineProperty(copy, name, descripcion);
+        });
+        return copy;
+      }
+
+// inicializo un objeto directamente
+      var o1 = {a: 1, b: 2};
+      console.log(o1);
+      document.getElementById("p1").innerHTML = "<b>o1.a:</b>" + o1.a + "<b>o1.b:</b>" + o1.b;
+// Ahora el objeto 'o2' apunta a la misma posición de la memoria ram que 'o1'
+      var o2 = copy(o1);
+      console.log(o2);
+      document.getElementById("p2").textContent = " o2.a: " + o2.a + " o2.b: " + o2.b;
+
+    </script>
+  </body>
+</html>

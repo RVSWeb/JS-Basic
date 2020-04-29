@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <!--Created on 29 abr. 2020, 11:40:21-->
+    <!--https://developer.mozilla.org/es/docs/Web/API/Element/innerHTML-->
+    <title>innerHTML</title>
+    <meta charset="UTF-8">
+    <meta name="author" content="Raul Vela Salas">
+    <meta name="description" content="...">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+    <link rel="shortcut icon" href="https://goo.gl/cais23">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.css">
+    <style>
+
+      #div , #div2{
+        width: 25%;
+        margin: 10px;
+        padding: 10px;
+        background: tomato;
+        font-family: Roboto , sans-serif;
+      }
+
+      #div1{
+        width: 25%;
+        margin: 10px;
+        padding: 10px;
+        background: aquamarine;
+      }
+
+      #b1{
+        margin: 10px;
+        padding: 10px;
+        font-family: Roboto, sans-serif;
+        border: 0px solid #ccc;
+        border-radius: 6px;
+      }
+
+      #b1:hover {
+        color: #333;
+        border: 2px solid #333;
+        background: #999;
+      }
+
+    </style>
+  </head>
+  <body>
+
+    <main>
+      <section>
+        <h1>innerHTML</h1>
+        <div id="div1">Obtiene el <span>contenido</span> de un elemento o lo establece</div>
+        <div id="div"></div>
+      </section>
+
+      <section>
+        <h1>innerHTML nuevo texto</h1>
+        <div id="div2"></div>
+      </section>
+
+      <button id="b1">Borrar</button>
+    </main>
+
+    <footer style="
+            width: 100%;
+            height: auto;
+            position: fixed;
+            bottom: 0;
+            margin: 0px auto;
+            padding: 10px;
+            background-color: rgb(189, 195, 199);
+            color: #000;
+            text-align: center;">
+      <aside style="height: 55px;">
+        <img alt="Licencia de Creative Commons" src="https://licensebuttons.net/l/by/4.0/80x15.png" />
+        <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">
+        </a>Este obra está bajo una 
+        <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">
+          licencia de Creative Commons Reconocimiento 4.0 Internacional
+        </a>
+        <p style="
+           margin-top: 5px;
+           font-size: 20px;
+           font-family: Lobster, cursive;
+           ">Powered by RVS</p>
+      </aside>
+    </footer>
+    <script>
+
+// Creamos un objeto con la propiedad innerHTML y se la añadimos a elemento 'div'
+      const content = Element.innerHTML = "1º nuevo texto usando innerHTML";
+// Se la añadimos a elemento 'div'
+      document.getElementById('div').innerHTML = content;
+
+// Creamos un objeto que obtenga el contenido del 'div1'
+      const texto = document.getElementById('div1').innerHTML;
+// Añadimos ese texto al 2º div
+      document.getElementById('div2').innerHTML = texto;
+
+// Borrar todo el contenido de la pagina web
+      function borrar() {
+        document.body.innerHTML = "";
+      }
+
+      const b1 = document.getElementById('b1');
+      b1.addEventListener('click', borrar);
+
+      document.documentElement.innerHTML = "<pre>" + document.documentElement.innerHTML.replace(/</g, "&lt;") + "</pre>";
+
+
+    </script>
+  </body>
+</html>

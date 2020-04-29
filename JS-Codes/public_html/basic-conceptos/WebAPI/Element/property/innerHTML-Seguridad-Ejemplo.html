@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <!--Created on 29 abr. 2020, 13:42:55-->
+    <title>innerHTML-Seguridad-Ejemplo</title>
+    <meta charset="UTF-8">
+    <meta name="author" content="Raul Vela Salas">
+    <meta name="description" content="...">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+    <link rel="shortcut icon" href="https://goo.gl/cais23">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.css">
+    <style>
+
+      #txt{
+        width: 50%;
+        height: auto;
+        padding: 10px;
+        margin: 10px;
+        border: 1px solid #f00;
+      }
+
+    </style>
+  </head>
+  <body>
+
+    <div id="txt">
+      <p>primer parrafo hijo de div id="txt"</p>
+      <p>segundo parrafo hijo de id="txt" txt</p>
+    </div>
+
+    <script>
+
+      txt = document.getElementById("txt");
+      console.log(txt.innerHTML);
+
+    </script>
+  </body>
+</html>

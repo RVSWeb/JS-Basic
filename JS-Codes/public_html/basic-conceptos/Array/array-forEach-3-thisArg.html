@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <!--Created on 28 abr. 2020, 19:32:39-->
+    <title>Array forEach</title>
+    <meta charset="UTF-8">
+    <meta name="author" content="Raul Vela Salas">
+    <meta name="description" content="...">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+    <link rel="shortcut icon" href="https://goo.gl/cais23">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.css">
+    <style>
+      h1{
+        padding: 10px;
+        margin: 10px auto;
+        width: 50%;
+        height: auto;
+        text-align: center;
+        color: #fff;
+        font-family: Roboto , sans-serif;
+        background: #ff6666;
+        border-radius: 6px;
+      }
+
+      #pre1 , #pre2{
+        width: 55%;
+        height: auto;
+        margin: 10px;
+        padding: 10px;
+        border-radius: 6px;
+      }
+
+      #p1 , #p2 , #p3{
+        width: 55%;
+        height: auto;
+        margin: 10px;
+        padding: 10px;
+        border-radius: 6px;
+        background: #ffccff;
+      }
+
+      #pre1{
+        background: #ccccff;
+      }
+
+      #pre2{
+        background: #ccffcc;
+      }
+
+    </style>
+  </head>
+  <body>
+
+
+    <h1>Usando thisArg</h1>
+    <h1>Actualiza las propiedades del objeto por cada entrada en el array</h1>
+
+    <pre id="pre1">
+      /**
+       * Creo una nueva funcion llamada <b>add</b> 
+       * para el objeto Counter mediante prototype
+       * 
+       * @param array el cual iteraremos
+       * @returns no devuelve nada
+       */
+    </pre>
+    <pre id="pre2">
+       Counter.prototype.add = function (array) {
+<b>// La funcion itera sobre el valor de entrada</b>
+        array.forEach(function (entry) {
+<b>// acumula el valor</b>
+          this.sum += entry;
+<b>// incrementa el contador</b>
+          ++this.count;
+<b>// 'this' objeto funcion 'Counter'</b>
+        }, <b>this</b>);
+      };
+
+    </pre>
+
+    <p id="p1"></p>
+    <p id="p2"></p>
+    <p id="p3"></p>
+
+    <script>
+
+      /**
+       * Defino la funcion Counter 'Contador'
+       * que invocará el array en su interior
+       * 
+       * @returns {undefined}
+       */
+      function Counter() {
+        this.sum = 0;
+        this.count = 0;
+      }
+
+      /**
+       * Creo una nueva funcion llamada add 
+       * para Counter mediante prototype
+       * 
+       * @param array el cual iteraremos
+       * @returns no devuelve nada
+       */
+      Counter.prototype.add = function (array) {
+// La funcion itera sobre el valor de entrada
+        array.forEach(function (entry) {
+//          acumula el valor
+          this.sum += entry;
+//          incrementa el contador
+          ++this.count;
+//          'this' objeto funcion 'Counter'
+        }, this);
+      };
+
+      var obj = new Counter();
+      obj.add([2, 5, 9]);
+      obj.count; // 3
+      obj.sum; // 16
+
+      document.getElementById('p1').textContent = obj.count;
+      document.getElementById('p2').textContent = obj.sum;
+      document.getElementById('p3').textContent = Counter;
+
+    </script>
+  </body>
+</html>

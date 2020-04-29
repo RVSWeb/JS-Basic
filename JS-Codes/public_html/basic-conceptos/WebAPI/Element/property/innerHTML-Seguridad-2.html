@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <!--Created on 29 abr. 2020, 13:42:55-->
+    <title>t</title>
+    <meta charset="UTF-8">
+    <meta name="author" content="Raul Vela Salas">
+    <meta name="description" content="...">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+    <link rel="shortcut icon" href="https://goo.gl/cais23">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.css">
+  </head>
+  <body>
+
+    <div id="el"></div>
+
+    <script>
+//ejemplo 1
+      var name = "Juan";
+// asumiendo que 'el' es un elemento de HTML DOM
+      el.innerHTML = name; // sin peligro
+
+// ...
+
+//ejemplo 2
+      name = "<script>alert('Soy Juan con una alerta molesta!')</script>";
+    el.innerHTML = name; // fíjese que el texto es molesto y no es realmente lo que se esperaba.
+
+  </body>
+</html>

@@ -14,9 +14,9 @@
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.css">
   </head>
   <body>
-    
-    
-    
+
+
+
 
     <footer style="
             width: 100%;
@@ -44,9 +44,29 @@
     </footer>
     <script>
 
+      /**
+       * Lanza una alerta
+       * 
+       * @param nombre
+       * @returns nothing
+       */
       function saludar(nombre) {
-        
+        alert('Hola ' + nombre);
       }
+
+      /**
+       * 
+       * @param callback
+       * @returns nothing
+       */
+      function procesarEntradaUsuario(callback) {
+        var nombre = prompt('Por favor ingresa tu nombre');
+//funcion callback 
+        callback(nombre);
+      }
+
+      procesarEntradaUsuario(saludar);
+
 
 
     </script>
