@@ -1,8 +1,7 @@
 /* 
  Created on : 27 abr. 2020, 18:07:33
- Author     : Android
+ Author     : RVS
  */
-
 
 // Es 'trigger' cuando el documento HTML ha sido completamente 
 // cargado y parseado, sin esperar hojas de estilo,

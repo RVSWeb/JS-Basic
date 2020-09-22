@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <!--Created on 30 abr. 2020, 23:24:56-->
+    <title>Es6-4-Async-works-on-external-inline-modules</title>
+    <meta charset="UTF-8">
+    <meta name="author" content="Raul Vela Salas">
+    <meta name="description" content="...">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+    <link rel="shortcut icon" href="https://goo.gl/cais23">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.css">
+  </head>
+  <body>
+
+    <script>
+      /**
+       * Funcion que crea un elemento 'div' 
+       * escribe un mensaje y lo añade al nodo del elemento body
+       * 
+       * @param {string} text
+       * @returns {undefined}
+       */
+      function addTextToBody(text) {
+        const div = document.createElement('div');
+        div.innerHTML = text;
+        div.style.width = "20%";
+        div.style.height = "auto";
+        div.style.margin = "10px";
+        div.style.padding = "10px";
+        div.style.color = "#f00";
+        div.style.borderRadius = "10px";
+        div.style.border = "1px solid #f00";
+        document.body.appendChild(div);
+      }
+    </script>
+
+    <!--Se ejecuta este-->
+    <script type="module" async src="js/slow_1.js"></script>
+    <script type="module" async>
+      import {addTextToBody} from "js/slow.js";
+      addTextToBody("Inline-slow executed");
+    </script>
+    <!--Se ejecuta este-->
+    <script type="module" async src="js/fast_1.js"></script>
+    <script type="module" async>
+      import {addTextToBody} from "js/fast.js";
+      addTextToBody("Inline-fast executed");
+    </script>
+    <script async type="module" src="js/module-1.js"></script>
+  </body>
+</html>

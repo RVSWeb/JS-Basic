@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <!--Created on 30 abr. 2020, 22:43:23-->
+    <title>Es6-3-Inline-scripts-are-also-deferred</title>
+    <meta charset="UTF-8">
+    <meta name="author" content="Raul Vela Salas">
+    <meta name="description" content="...">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+    <link rel="shortcut icon" href="https://goo.gl/cais23">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.css">
+  </head>
+  <body>
+
+    <script>
+
+      /**
+       * Funcion para invocar en los modulos
+       * 
+       * @param {string} text
+       * @returns {undefined} nada
+       */
+      function addTextToBody(text) {
+        const div = document.createElement("div");
+        div.textContent = text;
+        div.style.width = "30%";
+        div.style.margin = "10px";
+        div.style.padding = "10px";
+        div.style.fontFamily = "Roboto,sans-serif";
+        div.style.fontSize = "#ccc";
+        div.style.color = "#f00";
+        div.style.border = "1px solid #f00";
+        div.style.borderRadius = "10px";
+        document.body.appendChild(div);
+      }
+
+    </script>
+
+    <script type="module">
+       addTextToBody("Inline module executed");
+    </script>
+
+    <script src="js/module-1.js"></script>
+
+    <script defer>addTextToBody("Inline script executed");</script>
+
+    <script defer src="js/module-2.js"></script>
+
+  </body>
+</html>

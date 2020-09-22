@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <!--Created on 1 may. 2020, 9:56:01-->
+    <title>Es6-6-Always-CORS</title>
+    <meta charset="UTF-8">
+    <meta name="author" content="Raul Vela Salas">
+    <meta name="description" content="Es6-6-Always-CORS">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+    <link rel="shortcut icon" href="https://goo.gl/cais23">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.css">
+  </head>
+  <body>
+
+    <script>
+      /**
+       * Funcion para usar por los modulos 
+       * 
+       * Crea un elemento div
+       * Añade el texto pasado por parametro
+       * Añade el nodo del elemento 'div' y el nodo 'texto' al nodo padre 
+       * que es 'body'
+       * 
+       * @param {string} text
+       * @returns {undefined}
+       */
+      function addTextToBody(text) {
+        const div = document.createElement('div');
+        div.textContent = text;
+        document.body.appendChild(div);
+      }
+    </script>
+
+    <!--Esto no se ejecutara , como ello fallara una comprobacion CORD--> 
+    <script type="module" src="https://module-script-tests-gkecnwbwkb.now.sh/no-cors"></script>
+    <script type="module">
+      import 'https://module-script-tests-gkecnwbwkb.now.sh/no-cors';
+
+      addTextToBody("This will not execute , as the import will fail");
+    </script>
+
+    <script type="module" src="https://mo dule-script-qtests-gkecnwbwkb.now.sh/no-cors"></script>
+
+
+  </body>
+</html>

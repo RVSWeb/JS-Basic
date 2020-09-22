@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <!--Created on 30 abr. 2020, 18:06:59-->
+    <title>Es-Defer-by-default</title>
+    <meta charset="UTF-8">
+    <meta name="author" content="Raul Vela Salas">
+    <meta name="description" content="...">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+    <link rel="shortcut icon" href="https://goo.gl/cais23">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.css">
+  </head>
+  <body>
+    <script>
+      /**
+       * Función para importar dentro de los modulos creados aparte
+       * 
+       * @param {type} texto
+       * @returns {undefined}
+       */
+      function addTextToBody(texto) {
+        var div = document.createElement('div');
+        div.textContent = texto;
+        div.style.width = "30%";
+        div.style.margin = "10px";
+        div.style.padding = "10px";
+        div.style.fontFamily = "Roboto , sans-serif";
+        div.style.fontSize = "#ccc";
+        div.style.border = "1px solid #f00";
+        div.style.borderRadius = "10px";
+        div.style.color = "#f00";
+        document.body.appendChild(div);
+      }
+    </script>
+
+    <!-- Ejecuta la 2º libreria --> 
+    <script type="module" src="js/module-1.js"></script>
+    <!-- Ejecuta la 1º libreria porque solo tiene el atributo src --> 
+    <script src="js/module-2.js"></script>
+    <!-- Ejecuta la 3º libreria --> 
+    <script defer src="js/module-3.js"></script>
+
+  </body>
+</html>
